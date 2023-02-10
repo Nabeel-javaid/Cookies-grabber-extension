@@ -7,4 +7,4 @@ PS: This will only work on google Chrome if you want to use it for any other bro
 
 Feel free to update it and if you have any issue hit me up here or on discord "L   O   W   K   E   Y |  KREEPY#2635"
 
-**Don't use it for illegal purpose, its only for educational purpose
+**Don't use it for illegal purpose, its only for educational purpose**
